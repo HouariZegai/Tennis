@@ -1,9 +1,11 @@
 package com.houarizegai.tennis.controller;
 
+import com.houarizegai.tennis.dto.GameScoreDto;
 import com.houarizegai.tennis.dto.InitGameDto;
 import com.houarizegai.tennis.service.TennisGameService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,5 +21,10 @@ public class TennisController {
     @ResponseStatus(HttpStatus.CREATED)
     public void initGame(@Valid @RequestBody InitGameDto initGameDto) {
         tennisGameService.initGame(initGameDto);
+    }
+
+    @GetMapping("/score")
+    public ResponseEntity<GameScoreDto> getScore() {
+        return ResponseEntity.ok(tennisGameService.getScore());
     }
 }

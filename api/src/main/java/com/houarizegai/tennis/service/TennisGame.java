@@ -24,6 +24,14 @@ public class TennisGame {
         this.secondPlayer = Player.builder().name(secondPlayerName).build();
     }
 
+    public Player getFirstPlayer() {
+        return firstPlayer;
+    }
+
+    public Player getSecondPlayer() {
+        return secondPlayer;
+    }
+
     public String getScore() {
         if(isDeuce()) {
             return "Deuce";
