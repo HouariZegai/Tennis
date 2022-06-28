@@ -72,22 +72,6 @@ class TennisGameTest {
     }
 
     @Test
-    void playersAreDeuce3x3() {
-        playersWins(3, 3);
-        String score = tennisGame.getScore();
-
-        assertEquals("Deuce", score);
-    }
-
-    @Test
-    void playersAreDeuce4x4() {
-        playersWins(4, 4);
-        String score = tennisGame.getScore();
-
-        assertEquals("Deuce", score);
-    }
-
-    @Test
     void bothPlayersWinsOneBall() {
         playersWins(1, 1);
         String score = tennisGame.getScore();
@@ -101,6 +85,22 @@ class TennisGameTest {
         String score = tennisGame.getScore();
 
         assertEquals("Thirty All", score);
+    }
+
+    @Test
+    void playersAreDeuce3x3() {
+        playersWins(3, 3);
+        String score = tennisGame.getScore();
+
+        assertEquals("Deuce", score);
+    }
+
+    @Test
+    void playersAreDeuce4x4() {
+        playersWins(4, 4);
+        String score = tennisGame.getScore();
+
+        assertEquals("Deuce", score);
     }
 
     private void playersWins(int firstPlayerTimes, int secondPlayerTimes) {
