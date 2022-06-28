@@ -46,6 +46,9 @@ public class TennisGame {
             if(secondPlayerScore - firstPlayerScore == 1) {
                 return secondPlayerName + " Advantage";
             }
+            if(secondPlayerScore - firstPlayerScore >= 2) {
+                return secondPlayerName + " Win";
+            }
         }
 
         return SCORES.get(firstPlayerScore) + " " + SCORES.get(secondPlayerScore);
