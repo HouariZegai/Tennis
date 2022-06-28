@@ -6,6 +6,7 @@ import { initGame } from '../api/Tennis';
 const StartGame = () => {
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const data = new FormData(event.currentTarget);
     const players = {
       firstPlayerName: data.get('firstPlayerName'),
