@@ -12,9 +12,12 @@ class TennisGameTest {
 
     private TennisGame tennisGame;
 
+    private final String firstPlayerName = "Houari";
+    private final String secondPlayerName = "Robert";
+
     @BeforeEach
     public void setup() {
-        tennisGame = new TennisGame();
+        tennisGame = new TennisGame(firstPlayerName, secondPlayerName);
     }
 
     @Test
@@ -108,7 +111,7 @@ class TennisGameTest {
         playersWins(5, 4);
         String score = tennisGame.getScore();
 
-        assertEquals("First Player Advantage", score);
+        assertEquals(firstPlayerName + " Advantage", score);
     }
 
     @Test
@@ -116,7 +119,7 @@ class TennisGameTest {
         playersWins(3, 4);
         String score = tennisGame.getScore();
 
-        assertEquals("Second Player Advantage", score);
+        assertEquals(secondPlayerName + " Advantage", score);
     }
 
     private void playersWins(int firstPlayerTimes, int secondPlayerTimes) {

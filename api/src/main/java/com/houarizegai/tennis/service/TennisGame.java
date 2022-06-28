@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class TennisGame {
 
+    private final String firstPlayerName;
+    private final String secondPlayerName;
+
     private int firstPlayerScore;
     private int secondPlayerScore;
 
@@ -15,6 +18,11 @@ public class TennisGame {
         SCORES.put(1, "Fifteen");
         SCORES.put(2, "Thirty");
         SCORES.put(3, "Forty");
+    }
+
+    public TennisGame(String firstPlayerName, String secondPlayerName) {
+        this.firstPlayerName = firstPlayerName;
+        this.secondPlayerName = secondPlayerName;
     }
 
     public String getScore() {
@@ -28,12 +36,12 @@ public class TennisGame {
 
         if(firstPlayerScore > 3) {
             if(firstPlayerScore - secondPlayerScore == 1) {
-                return "First Player Advantage";
+                return firstPlayerName + " Advantage";
             }
         }
         if(secondPlayerScore > 3) {
             if(secondPlayerScore - firstPlayerScore == 1) {
-                return "Second Player Advantage";
+                return secondPlayerName + " Advantage";
             }
         }
 
