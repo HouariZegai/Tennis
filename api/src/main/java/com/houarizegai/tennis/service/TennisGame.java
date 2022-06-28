@@ -38,6 +38,9 @@ public class TennisGame {
             if(firstPlayerScore - secondPlayerScore == 1) {
                 return firstPlayerName + " Advantage";
             }
+            if(firstPlayerScore - secondPlayerScore >= 2) {
+                return firstPlayerName + " Win";
+            }
         }
         if(secondPlayerScore > 3) {
             if(secondPlayerScore - firstPlayerScore == 1) {
