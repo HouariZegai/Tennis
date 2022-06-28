@@ -19,19 +19,11 @@ public class TennisGame {
 
     public String getScore() {
         if(firstPlayerScore == secondPlayerScore) {
-            if(firstPlayerScore == 1) {
-                return "Fifteen All";
-            }
-            if(firstPlayerScore == 2) {
-                return "Thirty All";
-            }
-            if(firstPlayerScore == 3) {
+            if(firstPlayerScore >= 3) {
                 return "Deuce";
             }
-            if(firstPlayerScore == 4) {
-                return "Deuce";
-            }
-            return "Love All";
+
+            return SCORES.get(firstPlayerScore) + " All";
         }
 
         return SCORES.get(firstPlayerScore) + " " + SCORES.get(secondPlayerScore);
