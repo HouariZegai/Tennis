@@ -4,4 +4,8 @@ public class TennisGame {
     public String getScore() {
         return "Love All";
     }
+
+    public void firstPlayerWin() {
+
+    }
 }

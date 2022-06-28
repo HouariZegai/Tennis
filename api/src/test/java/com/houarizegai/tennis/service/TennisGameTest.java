@@ -20,5 +20,8 @@ class TennisGameTest {
     void firstPlayerWinsFirstBall() {
         TennisGame tennisGame = new TennisGame();
         tennisGame.firstPlayerWin();
+        String score = tennisGame.getScore();
+
+        assertEquals("Fifteen Love", score);
     }
 }
