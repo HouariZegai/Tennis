@@ -22,7 +22,9 @@ public class TennisGame {
             if(firstPlayerScore == 1) {
                 return "Fifteen All";
             }
-
+            if(firstPlayerScore == 2) {
+                return "Thirty All";
+            }
             if(firstPlayerScore == 3) {
                 return "Deuce";
             }
