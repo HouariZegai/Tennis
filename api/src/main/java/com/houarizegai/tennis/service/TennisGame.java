@@ -34,20 +34,13 @@ public class TennisGame {
             return SCORES.get(firstPlayerScore) + " All";
         }
 
-        if(firstPlayerScore > 3) {
+        String highestPlayerName = getHighestPlayerName();
+        if(firstPlayerScore > 3 || secondPlayerScore > 3) {
             if(Math.abs(firstPlayerScore - secondPlayerScore) == 1) {
-                return firstPlayerName + " Advantage";
+                return highestPlayerName + " Advantage";
             }
             if(Math.abs(firstPlayerScore - secondPlayerScore) >= 2) {
-                return firstPlayerName + " Win";
-            }
-        }
-        if(secondPlayerScore > 3) {
-            if(Math.abs(firstPlayerScore - secondPlayerScore) == 1) {
-                return secondPlayerName + " Advantage";
-            }
-            if(Math.abs(firstPlayerScore - secondPlayerScore) >= 2) {
-                return secondPlayerName + " Win";
+                return highestPlayerName + " Win";
             }
         }
 
@@ -60,5 +53,9 @@ public class TennisGame {
 
     public void secondPlayerWin() {
         secondPlayerScore++;
+    }
+
+    private String getHighestPlayerName() {
+        return firstPlayerScore > secondPlayerScore ? firstPlayerName : secondPlayerName;
     }
 }
