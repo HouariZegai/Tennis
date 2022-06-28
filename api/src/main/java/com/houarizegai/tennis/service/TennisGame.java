@@ -28,6 +28,9 @@ public class TennisGame {
             if(firstPlayerScore == 3) {
                 return "Deuce";
             }
+            if(firstPlayerScore == 4) {
+                return "Deuce";
+            }
             return "Love All";
         }
 
