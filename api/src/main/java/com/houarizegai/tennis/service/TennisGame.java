@@ -19,6 +19,9 @@ public class TennisGame {
 
     public String getScore() {
         if(firstPlayerScore == secondPlayerScore) {
+            if(firstPlayerScore == 3) {
+                return "Deuce";
+            }
             return "Love All";
         }
 
