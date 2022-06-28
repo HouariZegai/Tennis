@@ -130,6 +130,14 @@ class TennisGameTest {
         assertEquals(firstPlayerName + " Win", score);
     }
 
+    @Test
+    void secondPlayerWinTheGame() {
+        playersWins(3, 5);
+        String score = tennisGame.getScore();
+
+        assertEquals(secondPlayerName + " Win", score);
+    }
+
     private void playersWins(int firstPlayerTimes, int secondPlayerTimes) {
         for(int i = 0; i < firstPlayerTimes; i++) {
             tennisGame.firstPlayerWin();
