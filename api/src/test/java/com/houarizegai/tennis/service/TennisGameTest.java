@@ -15,4 +15,10 @@ class TennisGameTest {
         String score = tennisGame.getScore();
         assertEquals("Love All", score);
     }
+
+    @Test
+    void firstPlayerWinsFirstBall() {
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.firstPlayerWin();
+    }
 }
