@@ -11,6 +11,9 @@ public class TennisGame {
         if(firstPlayerScore == 2) {
             return "Thirty Love";
         }
+        if(firstPlayerScore == 3) {
+            return "Forty Love";
+        }
 
         return "Love All";
     }
