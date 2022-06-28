@@ -1,9 +1,10 @@
 import './App.css';
+import StartGame from './pages/StartGame';
 
 function App() {
   return (
     <div>
-      Tennis Game
+      <StartGame />
     </div>
   );
 }
