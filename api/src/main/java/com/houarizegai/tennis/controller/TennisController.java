@@ -2,6 +2,7 @@ package com.houarizegai.tennis.controller;
 
 import com.houarizegai.tennis.dto.GameScoreDto;
 import com.houarizegai.tennis.dto.InitGameDto;
+import com.houarizegai.tennis.dto.PlayerTypeDto;
 import com.houarizegai.tennis.service.TennisGameService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,12 @@ public class TennisController {
     @ResponseStatus(HttpStatus.CREATED)
     public void initGame(@Valid @RequestBody InitGameDto initGameDto) {
         tennisGameService.initGame(initGameDto);
+    }
+
+    @PostMapping("/record/{playerType}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void recordScore(@PathVariable PlayerTypeDto playerType) {
+        tennisGameService.recordScore(playerType);
     }
 
     @GetMapping("/score")

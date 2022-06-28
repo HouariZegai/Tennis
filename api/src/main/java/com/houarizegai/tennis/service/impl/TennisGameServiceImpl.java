@@ -1,7 +1,9 @@
 package com.houarizegai.tennis.service.impl;
 
 import com.houarizegai.tennis.dto.GameScoreDto;
+import com.houarizegai.tennis.dto.PlayerTypeDto;
 import com.houarizegai.tennis.exception.GameNotInitException;
+import com.houarizegai.tennis.exception.IllegalPlayerTypeException;
 import com.houarizegai.tennis.service.TennisGame;
 import com.houarizegai.tennis.service.TennisGameService;
 import com.houarizegai.tennis.dto.InitGameDto;
@@ -24,6 +26,17 @@ public class TennisGameServiceImpl implements TennisGameService {
         validateGameInitialized();
 
         return new GameScoreDto(tennisGame.getFirstPlayer(), tennisGame.getSecondPlayer(), tennisGame.getScore());
+    }
+
+    @Override
+    public void recordScore(PlayerTypeDto playerTypeDto) {
+        validateGameInitialized();
+
+        switch (playerTypeDto) {
+            case PLAYER1 -> tennisGame.firstPlayerWin();
+            case PLAYER2 -> tennisGame.secondPlayerWin();
+            default -> throw new IllegalPlayerTypeException("Unexpected value: " + playerTypeDto);
+        }
     }
 
     private void validateGameInitialized() {
