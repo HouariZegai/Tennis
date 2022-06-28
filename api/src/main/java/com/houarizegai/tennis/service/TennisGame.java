@@ -31,6 +31,11 @@ public class TennisGame {
                 return "First Player Advantage";
             }
         }
+        if(secondPlayerScore > 3) {
+            if(secondPlayerScore - firstPlayerScore == 1) {
+                return "Second Player Advantage";
+            }
+        }
 
         return SCORES.get(firstPlayerScore) + " " + SCORES.get(secondPlayerScore);
     }
