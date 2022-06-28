@@ -26,4 +26,7 @@ public class TennisGame {
     public void firstPlayerWin() {
         firstPlayerScore++;
     }
+
+    public void secondPlayerWin() {
+    }
 }
