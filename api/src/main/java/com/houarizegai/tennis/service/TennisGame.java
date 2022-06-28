@@ -35,18 +35,18 @@ public class TennisGame {
         }
 
         if(firstPlayerScore > 3) {
-            if(firstPlayerScore - secondPlayerScore == 1) {
+            if(Math.abs(firstPlayerScore - secondPlayerScore) == 1) {
                 return firstPlayerName + " Advantage";
             }
-            if(firstPlayerScore - secondPlayerScore >= 2) {
+            if(Math.abs(firstPlayerScore - secondPlayerScore) >= 2) {
                 return firstPlayerName + " Win";
             }
         }
         if(secondPlayerScore > 3) {
-            if(secondPlayerScore - firstPlayerScore == 1) {
+            if(Math.abs(firstPlayerScore - secondPlayerScore) == 1) {
                 return secondPlayerName + " Advantage";
             }
-            if(secondPlayerScore - firstPlayerScore >= 2) {
+            if(Math.abs(firstPlayerScore - secondPlayerScore) >= 2) {
                 return secondPlayerName + " Win";
             }
         }
