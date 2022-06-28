@@ -39,4 +39,14 @@ class TennisGameTest {
 
         assertEquals("Thirty Love", score);
     }
+
+    @Test
+    void firstPlayerWinsThreeBall() {
+        tennisGame.firstPlayerWin();
+        tennisGame.firstPlayerWin();
+        tennisGame.firstPlayerWin();
+        String score = tennisGame.getScore();
+
+        assertEquals("Forty Love", score);
+    }
 }
