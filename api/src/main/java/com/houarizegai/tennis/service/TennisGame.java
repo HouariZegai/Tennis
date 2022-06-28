@@ -1,21 +1,26 @@
 package com.houarizegai.tennis.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TennisGame {
 
     private int firstPlayerScore;
 
+    private static final Map<Integer, String> SCORES = new HashMap<>();
+
+    static {
+        SCORES.put(1, "Fifteen");
+        SCORES.put(2, "Thirty");
+        SCORES.put(3, "Forty");
+    }
+
     public String getScore() {
-        if(firstPlayerScore == 1) {
-            return "Fifteen Love";
-        }
-        if(firstPlayerScore == 2) {
-            return "Thirty Love";
-        }
-        if(firstPlayerScore == 3) {
-            return "Forty Love";
+        if(firstPlayerScore == 0) {
+            return "Love All";
         }
 
-        return "Love All";
+        return SCORES.get(firstPlayerScore) + " Love";
     }
 
     public void firstPlayerWin() {
