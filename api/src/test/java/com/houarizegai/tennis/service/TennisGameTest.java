@@ -10,5 +10,6 @@ class TennisGameTest {
     @Test
     void shouldReturnLoveAll() {
         TennisGame tennisGame = new TennisGame();
+        String score = tennisGame.getScore();
     }
 }
