@@ -1,7 +1,7 @@
-# Tennis Kata
+# Tennis Kata - API
 The tennis kata app is a Maven project. The solution is a REST API implemented with **TDD** using **Java** & **Spring**.
 
-# Get Started
+## Get Started
 
 ### Prerequisites
 Make sure you have:
