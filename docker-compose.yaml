@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  api:
+    build: ./api
+    container_name: tennis_api
+    ports:
+      - '8080:8080'
+  frontend:
+    build: ./web
+    container_name: tennis_frontend
+    ports:
+      - '3000:3000'
