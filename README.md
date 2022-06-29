@@ -22,7 +22,7 @@ git clone https://github.com/2022-DEV1-038/Tennis.git
 ```shell
 cd Tennis
 ```
-3. Run the app locally in containers:
+3. Build and run the app locally in containers:
 ```shell
 docker-compose up -d
 ```
