@@ -1,5 +1,5 @@
-# Tennis Kata - API
-The tennis kata app is a Maven project. The solution is a REST API implemented with **TDD** using **Java** & **Spring**.
+# Tennis Game - API
+This is a Maven project. The solution is a REST API implemented with **TDD** using **Java** & **Spring**.
 
 ## Get Started
 
@@ -16,7 +16,7 @@ git clone https://github.com/2022-DEV1-038/Tennis.git
 ```
 2. Make sure you are in project root:
 ```shell
-cd Tennis
+cd Tennis/api
 ```
 3. Build and generate jar:
 ```shell
