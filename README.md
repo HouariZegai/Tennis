@@ -1,11 +1,11 @@
 # Tennis Game
-Tennis Game Kata implementation
-You can find more about each folder by clicking on the folder name (README inside each folder):
+Tennis Game Kata implementation.  
+Find more about each folder by clicking on the folder name (read the README inside each folder):
 
 | **Apps**     | **Description** |
 | :----------: | :-------------: |
-| [Api](./api) | Backend REST API built with Java & Spring |
-| [Web](./web) | Frontend App built with React |
+| [Api](./api) | Backend REST API |
+| [Web](./web) | Frontend App |
 
 ## Get Started
 ### Perquisites

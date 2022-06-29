@@ -22,7 +22,7 @@ cd Tennis/api
 ```shell
 mvn clean package
 ```
-4. Run the app locally:
+4. Run the app:
 ```shell
 java -jar target/Tennis-fat.jar
 ```
