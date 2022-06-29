@@ -1,7 +1,20 @@
 import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { fetchScore } from '../api/Tennis'
 
 const GameBoard = () => {
+  const [score, setScore] = useState({})
+
+  const getScore = async () => {
+    const res = await fetchScore()
+    console.table('res: ', res)
+    setScore(res)
+  }
+
+  useEffect(() => {
+    getScore()
+  }, [])
+
   return (
     <Container maxWidth="sm">
         <Grid container spacing={2} marginTop={1}>
@@ -29,10 +42,10 @@ const GameBoard = () => {
                         Player Name
                     </Typography>
                     <Typography variant="h5" component="div">
-                        First Player name
+                        {score?.firstPlayer?.name}
                     </Typography>
                     <Typography sx={{ mt: 1.5 }} color="text.secondary">Score</Typography>
-                    <Typography variant="body2" sx={{ fontSize: 14 }}>First Player score</Typography>
+                    <Typography variant="body2" sx={{ fontSize: 14 }}>{score?.firstPlayer?.score}</Typography>
                 </CardContent>
             </Card>
           </Grid>
@@ -43,10 +56,10 @@ const GameBoard = () => {
                         Player Name
                     </Typography>
                     <Typography variant="h5" component="div">
-                        Second Player name
+                        {score?.secondPlayer?.name}
                     </Typography>
                     <Typography sx={{ mt: 1.5 }} color="text.secondary">Score</Typography>
-                    <Typography variant="body2" sx={{ fontSize: 14 }}>Second Player score</Typography>
+                    <Typography variant="body2" sx={{ fontSize: 14 }}>{score?.secondPlayer?.score}</Typography>
                 </CardContent>
             </Card>
           </Grid>
@@ -56,7 +69,7 @@ const GameBoard = () => {
                   <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
                       Score
                   </Typography>
-                  <Typography variant="h5" component="div">Total score..</Typography>
+                  <Typography variant="h5" component="div">{score?.score}</Typography>
               </CardContent>
             </Card>
           </Grid>

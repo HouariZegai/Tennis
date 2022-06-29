@@ -5,7 +5,7 @@ import StartGame from './pages/StartGame';
 function App() {
   return (
     <div>
-      {/* <StartGame /> */}
+      <StartGame />
       <GameBoard />
     </div>
   );

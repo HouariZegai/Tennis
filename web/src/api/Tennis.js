@@ -9,3 +9,8 @@ export const initGame = async (players) => {
         body: JSON.stringify(players)
     });
 }
+
+export const fetchScore = async () => {
+    const res = await fetch(`${BASE_URL}/score`)
+    return res.json()
+}
