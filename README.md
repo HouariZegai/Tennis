@@ -27,3 +27,11 @@ cd Tennis
 docker-compose up -d
 ```
 4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+## User's Manual (How to play)
+Find below description of the important elements of the user interface:
+
+| Page | Description |
+|:------:|:---------:|
+| ![init game](docs/screenshots/init-game.jpg) | 1. Type players name<br/> 2. Click Start Game to enter into the game board and start playing |
+| ![game board](docs/screenshots/game-board.jpg) | 3. To start a new game<br/> 4. Record new points<br/> 5. Current players names and their scores<br/> 6. Total score |
