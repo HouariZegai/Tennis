@@ -16,7 +16,7 @@ git clone https://github.com/2022-DEV1-038/Tennis.git
 ```shell
 cd Tennis/web
 ```
-3. Run the app locally:
+3. Run the app:
 ```
 npm start
 ```

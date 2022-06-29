@@ -1,11 +1,11 @@
 # Tennis Game
-Tennis Game Kata implementation
-You can find more about each folder by clicking on the folder name (README inside each folder):
+Tennis Game Kata implementation.  
+Find more about each folder by clicking on the folder name (read the README inside each folder):
 
 | **Apps**     | **Description** |
 | :----------: | :-------------: |
-| [Api](./api) | Backend REST API built with Java & Spring |
-| [Web](./web) | Frontend App built with React |
+| [Api](./api) | Backend REST API |
+| [Web](./web) | Frontend App |
 
 ## Get Started
 ### Perquisites
@@ -22,7 +22,7 @@ git clone https://github.com/2022-DEV1-038/Tennis.git
 ```shell
 cd Tennis
 ```
-3. Run the app locally in containers:
+3. Build and run the app in containers:
 ```shell
 docker-compose up -d
 ```
