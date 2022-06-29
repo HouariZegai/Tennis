@@ -33,13 +33,14 @@ const GameBoard = () => {
           </Grid>
           
           <Grid item xs={6}>
-            <Typography fontSize={24}>Record New Score</Typography>
+            <Typography fontSize={24}>Record New Points</Typography>
           </Grid>
           <Grid item xs={6}>
             <ButtonGroup variant="outlined" aria-label="outlined button group">
               <Button onClick={scorePlayer1}>Player 1</Button>
               <Button onClick={scorePlayer2}>Player 2</Button>
             </ButtonGroup>
+            <Typography fontSize={10} style={{color: '#777'}}>Click the above buttons to record new points</Typography>
           </Grid>
 
           <Grid item xs={12}>
