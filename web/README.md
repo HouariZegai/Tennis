@@ -7,7 +7,7 @@ Make sure you have:
 - [Git](https://git-scm.com/)
 - [Nodejs](https://nodejs.org/)
 
-### Run it locally
+### Run it locally (frontend only)
 1. Open terminal and clone the repo:
 ```shell
 git clone https://github.com/2022-DEV1-038/Tennis.git

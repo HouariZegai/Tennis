@@ -9,7 +9,7 @@ Make sure you have:
 - [Maven](https://maven.apache.org/)
 - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
-### Run it locally
+### Run it locally (api only)
 1. Open terminal and clone the repo:
 ```shell
 git clone https://github.com/2022-DEV1-038/Tennis.git
