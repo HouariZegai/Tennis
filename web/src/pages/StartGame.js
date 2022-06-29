@@ -1,9 +1,10 @@
 import React from 'react'
-import { Button, Grid, Stack } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { Button, Grid, Stack, TextField, Typography } from '@mui/material';
 import { initGame } from '../api/Tennis';
+import { useNavigate } from 'react-router-dom';
 
 const StartGame = () => {
+  let navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,11 +13,9 @@ const StartGame = () => {
       firstPlayerName: data.get('firstPlayerName'),
       secondPlayerName: data.get('secondPlayerName'),
     }
-    console.log(players);
 
     initGame(players).then(() => {
-      // TODO: go to the next page
-      console.log('Game initialized! Go to the next page..');
+      navigate("/board", {replace: true});
     })
     .catch(err => {
       alert(err)
@@ -32,6 +31,9 @@ const StartGame = () => {
       justifyContent="center"
       style={{ minHeight: '100vh' }}>
       <Grid item xs={3}>
+        <Grid item xs={12}>
+          <Typography fontSize={34} textAlign='center' marginBottom={3}>Initialize Game</Typography>
+        </Grid>
         <Stack
           component="form"
           onSubmit={handleSubmit}
