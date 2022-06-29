@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { fetchScore, recordScore } from '../api/Tennis'
+import { fetchScore, recordScore } from '../api/Tennis';
+import PlayerCard from '../components/PlayerCard';
 
 const GameBoard = () => {
   const [score, setScore] = useState({})
@@ -28,54 +29,32 @@ const GameBoard = () => {
     <Container maxWidth="sm">
         <Grid container spacing={2} marginTop={1}>
           <Grid item xs={12}>
-              <Typography>Game Board</Typography>
+              <Typography fontSize={34} textAlign='center'>Game Board</Typography>
           </Grid>
           
           <Grid item xs={6}>
-            <Typography fontSize={16}>Record New Score</Typography>
+            <Typography fontSize={24}>Record New Score</Typography>
           </Grid>
           <Grid item xs={6}>
-            <ButtonGroup variant="contained" aria-label="contained button group">
+            <ButtonGroup variant="outlined" aria-label="outlined button group">
               <Button onClick={scorePlayer1}>Player 1</Button>
               <Button onClick={scorePlayer2}>Player 2</Button>
             </ButtonGroup>
           </Grid>
 
           <Grid item xs={12}>
-            <Typography>Result</Typography>
+            <Typography fontSize={24}>Result</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Card sx={{ minWidth: 275 }}>
-                <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Player Name
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                        {score?.firstPlayer?.name}
-                    </Typography>
-                    <Typography sx={{ mt: 1.5 }} color="text.secondary">Score</Typography>
-                    <Typography variant="body2" sx={{ fontSize: 14 }}>{score?.firstPlayer?.score}</Typography>
-                </CardContent>
-            </Card>
+            <PlayerCard player={score?.firstPlayer}/>
           </Grid>
           <Grid item xs={6}>
-            <Card sx={{ minWidth: 275 }}>
-                <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Player Name
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                        {score?.secondPlayer?.name}
-                    </Typography>
-                    <Typography sx={{ mt: 1.5 }} color="text.secondary">Score</Typography>
-                    <Typography variant="body2" sx={{ fontSize: 14 }}>{score?.secondPlayer?.score}</Typography>
-                </CardContent>
-            </Card>
+            <PlayerCard player={score?.secondPlayer}/>
           </Grid>
           <Grid item xs={12}>
             <Card>
               <CardContent>
-                  <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                       Score
                   </Typography>
                   <Typography variant="h5" component="div">{score?.score}</Typography>
