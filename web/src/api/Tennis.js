@@ -14,3 +14,7 @@ export const fetchScore = async () => {
     const res = await fetch(`${BASE_URL}/score`)
     return res.json()
 }
+
+export const recordScore = async (player) => {
+    await fetch(`${BASE_URL}/record/${player}`, {method: 'POST'})
+}

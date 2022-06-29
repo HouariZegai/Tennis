@@ -1,19 +1,28 @@
 import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { fetchScore } from '../api/Tennis'
+import { fetchScore, recordScore } from '../api/Tennis'
 
 const GameBoard = () => {
   const [score, setScore] = useState({})
 
   const getScore = async () => {
     const res = await fetchScore()
-    console.table('res: ', res)
     setScore(res)
   }
 
   useEffect(() => {
     getScore()
   }, [])
+
+  const scorePlayer1 = () => {
+    recordScore('PLAYER1').then(() => getScore())
+    .catch(err => alert(err))
+  }
+
+  const scorePlayer2 = () => {
+    recordScore('PLAYER2').then(() => getScore())
+    .catch(err => alert(err))
+  }
 
   return (
     <Container maxWidth="sm">
@@ -27,8 +36,8 @@ const GameBoard = () => {
           </Grid>
           <Grid item xs={6}>
             <ButtonGroup variant="contained" aria-label="contained button group">
-              <Button>Player 1</Button>
-              <Button>Player 2</Button>
+              <Button onClick={scorePlayer1}>Player 1</Button>
+              <Button onClick={scorePlayer2}>Player 2</Button>
             </ButtonGroup>
           </Grid>
 
