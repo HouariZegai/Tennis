@@ -10,4 +10,8 @@ import lombok.Setter;
 public class Player {
     private String name;
     private int score;
+
+    public void increaseScore() {
+      this.score++;
+    }
 }

@@ -33,33 +33,30 @@ public class TennisGame {
     }
 
     public String getScore() {
-        if(isDeuce()) {
+        if(isDeuce())
             return "Deuce";
-        }
 
-        if(firstPlayer.getScore() == secondPlayer.getScore()) {
+        if(firstPlayer.getScore() == secondPlayer.getScore())
             return SCORES.get(firstPlayer.getScore()) + " All";
-        }
 
         String highestPlayerName = getHighestPlayerName();
         if(firstPlayer.getScore() > 3 || secondPlayer.getScore() > 3) {
-            if(hasAdvantage()) {
+            if(hasAdvantage())
                 return highestPlayerName + " Advantage";
-            }
-            if(hasWinner()) {
+
+            if(hasWinner())
                 return highestPlayerName + " Win";
-            }
         }
 
         return SCORES.get(firstPlayer.getScore()) + " " + SCORES.get(secondPlayer.getScore());
     }
 
     public void firstPlayerWin() {
-        firstPlayer.setScore(firstPlayer.getScore() + 1);
+        firstPlayer.increaseScore();
     }
 
     public void secondPlayerWin() {
-        secondPlayer.setScore(secondPlayer.getScore() + 1);
+        secondPlayer.increaseScore();
     }
 
     private boolean isDeuce() {
